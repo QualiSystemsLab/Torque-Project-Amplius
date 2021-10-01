@@ -18,6 +18,7 @@ inputs:
       description: please set the root database password
       default_value: 12345  # Used to define the db admin password
   - DB_NAME: wordpress_demo  # DB_NAME - a target database name
+  - SOURCE_CIDR: 0.0.0.0/0
 
 # These are the applications that will be deployed in this blueprint
 applications:
@@ -38,6 +39,18 @@ applications:
       # only when the database is ready
       depends_on:
         - mysql
+
+services:
+  - alb-custom-cidr:
+      input_values:
+        - VPC_ID: $torque.environment.virtual_network_id
+        - APP_PORT: 80
+        - APP_NAME: wordpress
+        - SOURCE_CIDR: $SOURCE_CIDR
+        - AWS_REGION: eu-west-1
+        - role_arn: PowerUserAccess
+      depends_on:
+        - wordpress-internal
 
 artifacts:
   - wordpress-internal: wordpress-5.4.1.tar.gz
