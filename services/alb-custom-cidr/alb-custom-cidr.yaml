@@ -1,0 +1,28 @@
+spec_version: 1
+kind: TerraForm
+inputs:
+  - VPC_ID
+  - APP_PORT
+  - APP_NAME
+  - SOURCE_CIDR
+  - AWS_REGION
+  - role_arn: PowerUserAccess
+  # role_arn is a default role that works out of the box in AWS,
+
+module:
+  source: github.com/QualiSystemsLab/Torque-Project-Amplius/Terraform/create-alb
+
+terraform_version: 1.0.6
+variables:
+  var_file: terraform.tfvars
+  values:
+    - vpc_id: $VPC_ID
+    - app_name: $APP_NAME
+    - app_port: $APP_PORT
+    - source_cidr: $SOURCE_CIDR
+    - aws_region: $AWS_REGION
+outputs:        # Declaring the outputs from Terraform that will be recognized in this blueprint
+  - app_url   
+permissions:
+  aws:
+    role_arn: $role_arn    #role assumed by service
