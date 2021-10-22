@@ -19,7 +19,6 @@ inputs:
       default_value: 12345  # Used to define the db admin password
   - DB_NAME: wordpress_demo  # DB_NAME - a target database name
   - SOURCE_CIDR: 0.0.0.0/0
-  - AZURE_MANAGED_IDENTITY
 
 # These are the applications that will be deployed in this blueprint
 applications:
@@ -44,7 +43,7 @@ applications:
 services:
    - configure-ag-nsg:
       input_values:
-        - MANAGED_IDENTITY: $AZURE_MANAGED_IDENTITY
+        - MANAGED_IDENTITY: $torque.parameters.demo_managed_identity
         - SANDBOX_ID: $torque.environment.id
         - APP_PORT: 80
         - APP_NAME: wordpress
