@@ -1,0 +1,24 @@
+spec_version: 1
+kind: TerraForm
+inputs:
+  - APP_PORT
+  - APP_NAME
+  - SOURCE_CIDR
+  - MANAGED_IDENTITY
+  - SANDBOX_ID
+  # role_arn is a default role that works out of the box in AWS,
+
+module:
+  source: github.com/QualiSystemsLab/Torque-Project-Amplius/Terraform/configure-ag-nsg
+
+terraform_version: 1.0.6
+variables:
+  var_file: terraform.tfvars
+  values:
+    - torque_sandbox_id: $SANDBOX_ID
+    - app_name: $APP_NAME
+    - app_port: $APP_PORT
+    - source_cidr: $SOURCE_CIDR
+permissions:
+  azure:
+    managed_identity_id: $MANAGED_IDENTITY
