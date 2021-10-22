@@ -18,13 +18,13 @@ variable "app_port" {}
 variable "source_cidr" {}
 
 # Debugging only
-variable "azure_creds" {}
+# variable "azure_creds" {}
 
 # Providers block
 provider "azurerm" {
     features {}
 
-    subscription_id = var.azure_creds.subscription_id
+    # subscription_id = var.azure_creds.subscription_id
 }
 
 
