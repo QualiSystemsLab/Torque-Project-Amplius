@@ -53,3 +53,8 @@ services:
 
 debugging:
   bastion_availability: enabled-on
+
+ingress:
+  listeners:
+    - http: 80
+      redirect_to_listener: 80

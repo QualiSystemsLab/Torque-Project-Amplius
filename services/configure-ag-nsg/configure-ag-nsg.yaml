@@ -6,7 +6,6 @@ inputs:
   - SOURCE_CIDR
   - MANAGED_IDENTITY
   - SANDBOX_ID
-  # role_arn is a default role that works out of the box in AWS,
 
 module:
   source: github.com/QualiSystemsLab/Torque-Project-Amplius/Terraform/configure-ag-nsg
