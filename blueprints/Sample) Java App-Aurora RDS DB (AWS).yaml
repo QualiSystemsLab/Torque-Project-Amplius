@@ -8,7 +8,7 @@ metadata:
     and a managed database cluster deployed with TerraForm.
 
 clouds:
-  - AWS: eu-west-1
+  - AWS-053: eu-west-1
 
 # These are the blueprint parameters and their default values.
 # The values can be changed when creating a sandbox based on this
