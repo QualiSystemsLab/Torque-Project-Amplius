@@ -45,3 +45,6 @@ debugging:
 ingress:
   listeners:
     - http: 80
+      rules:
+        - application: wordpress
+          default: true
