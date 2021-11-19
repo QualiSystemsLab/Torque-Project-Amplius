@@ -55,5 +55,12 @@ services:
 artifacts:
   - wordpress-internal: wordpress-5.4.1.tar.gz
 
+outputs:
+  - Wordpress Address:
+    description: external DNS address to the Wordpress application
+    value: $torque.services.alb-custom-cidr.outputs.app_url
+    display_style: hyperlink
+
 debugging:
   bastion_availability: enabled-on
+
