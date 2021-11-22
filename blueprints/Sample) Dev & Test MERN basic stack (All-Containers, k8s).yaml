@@ -10,7 +10,7 @@ metadata:
   description: >
     Mongo + Express + React.js + Node.js (MERN stack) Application running on K8s
 clouds:
-  - Azure/Sales-AKS-Cluster
+  - Azure/Sales-k8s-Cluster
 applications:
   - todo-ui:
       input_values:
