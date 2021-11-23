@@ -29,3 +29,4 @@ override.tf.json
 # example: *tfplan*
 *.auto.tfvars.json
 **/.terraform.lock.hcl
+applications/REST-er.rest
