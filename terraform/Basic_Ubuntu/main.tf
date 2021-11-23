@@ -28,11 +28,9 @@ provider "aws" {
 
 # Resources block
 resource "aws_instance" "TF_Exmaple_ubuntu" {
-    ami = "ami-07dd19a7900a1f049"
+    ami = "ami-083654bd07b5da81d"
     instance_type = "t3a.nano"
     key_name = "CloudshellKP"
-    tags = {
-      "Name" = "TF_Example - Ubuntu"
-    }
+    tags = {"Name" = "TF_Example - Ubuntu"}
 
 }
