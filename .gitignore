@@ -30,3 +30,4 @@ override.tf.json
 *.auto.tfvars.json
 **/.terraform.lock.hcl
 applications/REST-er.rest
+.vscode/settings.json
