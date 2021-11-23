@@ -8,7 +8,7 @@ inputs:
   - SANDBOX_ID
 
 module:
-  source: github.com/QualiSystemsLab/Torque-Project-Amplius/Terraform/configure-ag-nsg
+  source: github.com/QualiSystemsLab/Torque-Project-Amplius/terraform/configure-ag-nsg
 
 terraform_version: 1.0.6
 variables:
