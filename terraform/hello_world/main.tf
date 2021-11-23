@@ -10,7 +10,7 @@ output message {
 }
 
 output url {
-  value       = "www.google.com"
+  value       = "http://www.google.com"
   sensitive   = false
   description = "App URL"
   depends_on  = []
