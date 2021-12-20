@@ -29,5 +29,8 @@ override.tf.json
 # example: *tfplan*
 *.auto.tfvars.json
 **/.terraform.lock.hcl
+<<<<<<< Updated upstream
 applications/REST-er.rest
+=======
+>>>>>>> Stashed changes
 .vscode/settings.json

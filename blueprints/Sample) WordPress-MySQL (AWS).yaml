@@ -41,10 +41,3 @@ applications:
 
 debugging:
   bastion_availability: enabled-on
-
-ingress:
-  listeners:
-    - http: 80
-      rules:
-        - application: wordpress
-          default: true

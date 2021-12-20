@@ -27,7 +27,7 @@ infrastructure:
 
   # Port 80 will be opened externally to receive web requests
   connectivity:
-    internal:
+    external:
       - port_info:
           port: 80
           ingress-healthcheck:
