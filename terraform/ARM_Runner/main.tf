@@ -8,14 +8,6 @@ terraform {
     }
 }
 
-# Variables block
-variable "torque_sandbox_id" {}
-
-variable "template_name" {}
-
-# Debugging only
-# variable "azure_creds" {}
-
 # Providers block
 provider "azurerm" {
     features {}
@@ -27,7 +19,6 @@ provider "azurerm" {
 data "http" "ARM_Template" {
   url = "https://raw.githubusercontent.com/QualiSystemsLab/Torque-Project-Amplius/master/arm_templates/${var.template_name}/template.json"
 }
-
 
 # Resources block
 resource "azurerm_template_deployment" "arm_deployment" {
@@ -42,10 +33,4 @@ resource "azurerm_template_deployment" "arm_deployment" {
   }
 
   deployment_mode = "Incremental"
-}
-
-
-# Outputs block
-output "storageAccountName" {
-  value = azurerm_template_deployment.arm_deployment.outputs["storageAccountName"]
 }
