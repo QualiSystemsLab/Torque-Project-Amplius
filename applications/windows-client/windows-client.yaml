@@ -28,3 +28,6 @@ source:
         username: administrator
   os_type: windows
 spec_version: 1
+
+debugging:
+  connection_protocol: RDP
