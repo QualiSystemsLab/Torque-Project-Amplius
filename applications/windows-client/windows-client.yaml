@@ -1,0 +1,30 @@
+kind: application
+inputs:
+  - INSTANCE_SIZE_AWS
+
+infrastructure:
+  connectivity:
+    internal:
+      - port_info:
+          port: 1433
+  compute:
+    spec:        
+      aws:
+        instance_type: $INSTANCE_SIZE_AWS
+configuration:
+  initialization:
+    script: windows-client-init.ps1
+  start:
+    script: windows-client-start.ps1
+  healthcheck:
+    timeout: 100
+    wait_for_ports: ALL
+    #script: todo-ui-hc.sh
+source:
+  image:    
+    ami:
+      - id: ami-08f9ef336e2a9e787
+        region: eu-west-1
+        username: administrator
+  os_type: windows
+spec_version: 1
